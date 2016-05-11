@@ -23,6 +23,8 @@ class MarioWindowController {
     let marioContentView: NSView!
     var marioLayer: CALayer!
     
+    let translationDuration = 23.0
+    
     // Marios Frame in dem wir zeichnen
     static let marioFrame = CGRect(
         x: 0.0,
@@ -34,7 +36,7 @@ class MarioWindowController {
     // Erstellen des Image views und erzeugen von Layern zur animierung
     init(marioWindow: MarioWindow) {
         self.marioWindow = marioWindow
-        marioContentView = marioWindow.contentView as! NSView
+        marioContentView = marioWindow.contentView! as NSView
         marioContentView.layer = CALayer()
         marioContentView.wantsLayer = true
         marioContentView.layerContentsRedrawPolicy = NSViewLayerContentsRedrawPolicy.Never
@@ -46,6 +48,10 @@ class MarioWindowController {
         
         // Mario animation starten
         animateMario()
+        
+        // Start timer
+        let timer = MarioTimer(marioController: self)
+        timer.startTimer(translationDuration)
     }
 
     func animateMario() {
@@ -62,11 +68,38 @@ class MarioWindowController {
         // Keypath fuer den Austausch ist bei Image Views "contents"
         let spriteAnimation = CAKeyframeAnimation(keyPath: "contents")
         
-        // Sprites als Einzelbilder
-        spriteAnimation.values = [
-            NSImage(named: "mario1")!,
-            NSImage(named: "mario3")!,
-        ]
+        // I don't like how 4 looks :)
+        var rand = Int(arc4random_uniform(3) + 1)
+        //rand = 4
+        
+        if (rand == 1) {
+            spriteAnimation.values = [
+                NSImage(named: "mario3_frog1")!,
+                NSImage(named: "mario3_frog2")!,
+                NSImage(named: "mario3_frog3")!,
+            ]
+        }
+        else if (rand == 2) {
+            // Sprites als Einzelbilder
+            spriteAnimation.values = [
+                NSImage(named: "mario_shell1")!,
+                NSImage(named: "mario_shell2")!,
+            ]
+        }
+        else if (rand == 3) {
+            spriteAnimation.values = [
+                NSImage(named: "mario3_racoon1")!,
+                //NSImage(named: "mario3_racoon2")!,
+                NSImage(named: "mario3_racoon3")!,
+                //NSImage(named: "mario3_racoon2")!,
+            ]
+        }
+        else if (rand == 4) {
+            spriteAnimation.values = [
+                NSImage(named: "mario1")!,
+                NSImage(named: "mario2")!,
+            ]
+        }
         
         // 500ms fuer einen Durchlauf der Animation
         spriteAnimation.duration = 0.5
@@ -84,7 +117,7 @@ class MarioWindowController {
         */
         let translateAnimation = CABasicAnimation(keyPath: "transform.translation.x")
         let targetFrame = CGRectOffset(marioContentView.frame, targetX, 0);
-        var sourcePoint = CGPoint(x: 0-kMarioOffscreenOffset, y: 0)
+        let sourcePoint = CGPoint(x: 0-kMarioOffscreenOffset, y: 0)
         translateAnimation.toValue = NSValue(point: targetFrame.origin)
         translateAnimation.fromValue = NSValue(point: sourcePoint)
 
@@ -93,7 +126,7 @@ class MarioWindowController {
         translateAnimation.fillMode = kCAFillModeForwards
         
         // 23 - https://de.wikipedia.org/wiki/Dreiundzwanzig
-        translateAnimation.duration = 23.0
+        translateAnimation.duration = translationDuration
         translateAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         translateAnimation.repeatCount = HUGE
         

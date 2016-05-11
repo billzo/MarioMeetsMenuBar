@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let workspaceNC = NSWorkspace.sharedWorkspace().notificationCenter
         workspaceNC.addObserver(
             self,
-            selector: "didChangeWorkspace",
+            selector: #selector(AppDelegate.didChangeWorkspace),
             name:NSWorkspaceActiveSpaceDidChangeNotification,
             object: NSWorkspace.sharedWorkspace()
         )
@@ -62,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func addMarioController() {
-        window.level = Int(CGWindowLevelForKey(Int32(kCGMainMenuWindowLevelKey)+1))
+        window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey))
         // Erstelle Mario und lass ihn laufen
         marioController = MarioWindowController(marioWindow: window)
         marioController.start()
@@ -76,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             backing: NSBackingStoreType.Buffered,
             defer: true
         )
-        window.level = Int(CGWindowLevelForKey(Int32(kCGMainMenuWindowLevelKey)+1))
+        window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey))
         window.hasShadow = false
         window.opaque = false
         window.backgroundColor = NSColor(
@@ -121,9 +121,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func bringToFront() {
         window.orderFrontRegardless()
         
-        // Recall each 15 minutes
+        // Recall frequently
         let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-            Int64((3600/4) * Double(NSEC_PER_SEC)))
+            Int64((1) * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             self.bringToFront()
         }
@@ -135,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func updateWindowFrame() {
-        window.level = Int(CGWindowLevelForKey(Int32(kCGMainMenuWindowLevelKey)+1))
+        window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.StatusWindowLevelKey))
         
         // Fenster neu positionieren
         window.setFrame(windowContentRect(), display: true)

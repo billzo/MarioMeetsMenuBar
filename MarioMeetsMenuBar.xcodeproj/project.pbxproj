@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A28C751CE38F8A005EA472 /* MarioTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A28C741CE38F8A005EA472 /* MarioTimer.swift */; };
 		37102AF71B53EB4D00A684A5 /* MarioMenuBarPref.h in Headers */ = {isa = PBXBuildFile; fileRef = 37102AF61B53EB4D00A684A5 /* MarioMenuBarPref.h */; };
 		37102AF91B53EB4D00A684A5 /* MarioMenuBarPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 37102AF81B53EB4D00A684A5 /* MarioMenuBarPref.m */; };
 		37102AFB1B53EB4D00A684A5 /* MarioMenuBarPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 37102AFA1B53EB4D00A684A5 /* MarioMenuBarPref.tiff */; };
@@ -22,7 +23,7 @@
 		3730CC101B4D9B3800E8FDBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3730CC0F1B4D9B3800E8FDBB /* Images.xcassets */; };
 		3730CC131B4D9B3900E8FDBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3730CC111B4D9B3900E8FDBB /* Main.storyboard */; };
 		3730CC1F1B4D9B3900E8FDBB /* MarioMeetsMenuBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730CC1E1B4D9B3900E8FDBB /* MarioMeetsMenuBarTests.swift */; };
-		379B84991B5285190027B0F8 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 379B84981B5285190027B0F8 /* Readme.md */; };
+		379B84991B5285190027B0F8 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 379B84981B5285190027B0F8 /* Readme.md */; };
 		37C946181B5446E800EF0586 /* Schwammerl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 37C946171B5446E800EF0586 /* Schwammerl.icns */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A28C741CE38F8A005EA472 /* MarioTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarioTimer.swift; sourceTree = "<group>"; };
 		37102AF21B53EB4D00A684A5 /* MarioMenuBarPref.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarioMenuBarPref.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		37102AF51B53EB4D00A684A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37102AF61B53EB4D00A684A5 /* MarioMenuBarPref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarioMenuBarPref.h; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				3730CC5B1B4F1AB300E8FDBB /* Objective-C */,
 				3730CC091B4D9B3800E8FDBB /* Supporting Files */,
 				379B84981B5285190027B0F8 /* Readme.md */,
+				24A28C741CE38F8A005EA472 /* MarioTimer.swift */,
 			);
 			path = MarioMeetsMenuBar;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379B84991B5285190027B0F8 /* Readme.md in Resources */,
 				3730CC101B4D9B3800E8FDBB /* Images.xcassets in Resources */,
 				3730CC131B4D9B3900E8FDBB /* Main.storyboard in Resources */,
 			);
@@ -354,9 +358,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A28C751CE38F8A005EA472 /* MarioTimer.swift in Sources */,
 				3730CC0E1B4D9B3800E8FDBB /* MarioController.swift in Sources */,
 				3730CC0C1B4D9B3800E8FDBB /* AppDelegate.swift in Sources */,
-				379B84991B5285190027B0F8 /* Readme.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "MarioMeetsMenuBar/MarioMeetsMenuBar-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -534,7 +538,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "MarioMeetsMenuBar/MarioMeetsMenuBar-Bridging-Header.h";
 			};
 			name = Release;
