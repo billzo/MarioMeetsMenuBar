@@ -22,6 +22,7 @@ class MarioWindowController {
     let marioWindow: MarioWindow!
     let marioContentView: NSView!
     var marioLayer: CALayer!
+    var timer: MarioTimer!
     
     let translationDuration = 23.0
     
@@ -50,7 +51,7 @@ class MarioWindowController {
         animateMario()
         
         // Start timer
-        let timer = MarioTimer(marioController: self)
+        timer = MarioTimer(marioController: self)
         timer.startTimer(translationDuration)
     }
 
@@ -69,7 +70,7 @@ class MarioWindowController {
         let spriteAnimation = CAKeyframeAnimation(keyPath: "contents")
         
         // I don't like how 4 looks :)
-        var rand = Int(arc4random_uniform(3) + 1)
+        let rand = Int(arc4random_uniform(3) + 1)
         //rand = 4
         
         if (rand == 1) {
@@ -158,6 +159,7 @@ class MarioWindowController {
     func didChangeScreenParameters() {
         marioLayer.removeAllAnimations()
         animateMario()
+        timer.restart(translationDuration)
     }
 }
 

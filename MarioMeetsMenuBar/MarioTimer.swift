@@ -24,4 +24,9 @@ class MarioTimer {
     dynamic func timerTick() {
         marioController.animateMario()
     }
+    
+    func restart(translationDuration: Double) {
+        timer.invalidate()
+        timer = NSTimer.scheduledTimerWithTimeInterval(translationDuration, target: self, selector: #selector(MarioTimer.timerTick), userInfo: nil, repeats: true)
+    }
 }
