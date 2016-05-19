@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2402E9D41CED73B9004D04CC /* death_shroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2402E9D31CED73B9004D04CC /* death_shroom.png */; };
 		24A28C751CE38F8A005EA472 /* MarioTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A28C741CE38F8A005EA472 /* MarioTimer.swift */; };
 		37102AF71B53EB4D00A684A5 /* MarioMenuBarPref.h in Headers */ = {isa = PBXBuildFile; fileRef = 37102AF61B53EB4D00A684A5 /* MarioMenuBarPref.h */; };
 		37102AF91B53EB4D00A684A5 /* MarioMenuBarPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 37102AF81B53EB4D00A684A5 /* MarioMenuBarPref.m */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2402E9D31CED73B9004D04CC /* death_shroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = death_shroom.png; sourceTree = "<group>"; };
 		24A28C741CE38F8A005EA472 /* MarioTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarioTimer.swift; sourceTree = "<group>"; };
 		37102AF21B53EB4D00A684A5 /* MarioMenuBarPref.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarioMenuBarPref.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		37102AF51B53EB4D00A684A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		37102B0C1B53F2C100A684A5 /* Resourcen */ = {
 			isa = PBXGroup;
 			children = (
+				2402E9D31CED73B9004D04CC /* death_shroom.png */,
 				37C946171B5446E800EF0586 /* Schwammerl.icns */,
 				37102B121B53F85300A684A5 /* mario_walking.png */,
 				37102B131B53F85300A684A5 /* mario_walking@2x.png */,
@@ -322,6 +325,7 @@
 				37102B141B53F85300A684A5 /* mario_walking.png in Resources */,
 				37102B0B1B53F2BE00A684A5 /* SwiftBlogLogo@2x.png in Resources */,
 				37C946181B5446E800EF0586 /* Schwammerl.icns in Resources */,
+				2402E9D41CED73B9004D04CC /* death_shroom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +418,7 @@
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Debug;
@@ -427,7 +431,7 @@
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = prefPane;
 			};
 			name = Release;

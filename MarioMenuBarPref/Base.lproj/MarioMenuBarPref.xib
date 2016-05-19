@@ -13,47 +13,17 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="MarioMeetsMenuBar options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5" userLabel="PrefPane">
+        <window title="Mario Meets Menu Bar" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5" userLabel="PrefPane">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="176" y="715" width="668" height="128"/>
+            <rect key="contentRect" x="176" y="715" width="668" height="160"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="668" height="128"/>
+                <rect key="frame" x="0.0" y="0.0" width="668" height="160"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCO-xJ-XyC">
-                        <rect key="frame" x="18" y="92" width="154" height="18"/>
-                        <buttonCell key="cell" type="check" title="Launch on OS X start" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="fr1-bn-8El">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="launchOnStartClicked:" target="mtb-zw-wyU" id="fuo-CJ-BCd"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-NO-7UU">
-                        <rect key="frame" x="14" y="13" width="98" height="32"/>
-                        <buttonCell key="cell" type="push" title="Kill Mario" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZNr-fv-N9f">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="quitApplicationClicked:" target="mtb-zw-wyU" id="5aw-hJ-GsQ"/>
-                        </connections>
-                    </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUs-kz-HqV">
-                        <rect key="frame" x="521" y="30" width="92" height="92"/>
-                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="SwiftBlogLogo" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="n1U-Vg-giV">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="openSwiftBlogClicked:" target="mtb-zw-wyU" id="Cz4-Wu-qe2"/>
-                        </connections>
-                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-bm-Bce">
-                        <rect key="frame" x="487" y="8" width="161" height="19"/>
+                        <rect key="frame" x="487" y="22" width="161" height="19"/>
                         <buttonCell key="cell" type="recessed" title="www.swift-blog.de" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cfF-Nz-1jo">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="systemBold"/>
@@ -62,25 +32,53 @@
                             <action selector="openSwiftBlogClicked:" target="mtb-zw-wyU" id="ezI-So-oOA"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yz-bL-LUF">
-                        <rect key="frame" x="18" y="69" width="42" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="v1.0.1" id="ZVy-Ph-qJa">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUs-kz-HqV">
+                        <rect key="frame" x="517" y="60" width="100" height="80"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="SwiftBlogLogo" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="n1U-Vg-giV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openSwiftBlogClicked:" target="mtb-zw-wyU" id="Cz4-Wu-qe2"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kb8-Oq-81m">
+                        <rect key="frame" x="279" y="13" width="110" height="32"/>
+                        <buttonCell key="cell" type="push" title="Spawn Mario" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NXJ-3L-mbP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="startApplicationClicked:" target="mtb-zw-wyU" id="uIz-Yb-Zqt"/>
+                        </connections>
+                    </button>
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0I-Ar-4pe">
+                        <rect key="frame" x="273" y="47" width="122" height="106"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Schwammerl" id="sOQ-qO-Fqo"/>
+                    </imageView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-NO-7UU">
+                        <rect key="frame" x="32" y="13" width="98" height="32"/>
+                        <buttonCell key="cell" type="push" title="Kill Mario" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZNr-fv-N9f">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="quitApplicationClicked:" target="mtb-zw-wyU" id="5aw-hJ-GsQ"/>
+                        </connections>
+                    </button>
+                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tsj-la-bfd">
+                        <rect key="frame" x="20" y="47" width="122" height="106"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="death_shroom" id="AZT-0Q-bge"/>
+                    </imageView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="895" y="511"/>
+            <point key="canvasLocation" x="803" y="527"/>
         </window>
-        <customObject id="mtb-zw-wyU" userLabel="MarioPrefController" customClass="MarioPrefController">
-            <connections>
-                <outlet property="launchSwitch" destination="KCO-xJ-XyC" id="eOX-PU-bIa"/>
-            </connections>
-        </customObject>
+        <customObject id="mtb-zw-wyU" userLabel="MarioPrefController" customClass="MarioPrefController"/>
     </objects>
     <resources>
+        <image name="Schwammerl" width="512" height="512"/>
         <image name="SwiftBlogLogo" width="200" height="200"/>
+        <image name="death_shroom" width="400" height="400"/>
     </resources>
 </document>

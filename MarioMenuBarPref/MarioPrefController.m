@@ -48,38 +48,6 @@
     [app forceTerminate];
 }
 
-#pragma mark - Login launch helper
-
-- (void)setLaunchOnLogin:(BOOL)launchOnLogin
-{
-    NSURL *bundleURL = [NSURL fileURLWithPath:@"/Applications/MarioMeetsMenuBar.app"];
-    LSSharedFileListRef loginItemsListRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-    
-    if (launchOnLogin) {
-        NSDictionary *properties;
-        properties = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"com.apple.loginitem.HideOnLaunch"];
-        LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsListRef, kLSSharedFileListItemLast, NULL, NULL, (__bridge CFURLRef)bundleURL, (__bridge CFDictionaryRef)properties,NULL);
-        if (itemRef) {
-            CFRelease(itemRef);
-        }
-    } else {
-        LSSharedFileListRef loginItemsListRef = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-        CFArrayRef snapshotRef = LSSharedFileListCopySnapshot(loginItemsListRef, NULL);
-        NSArray* loginItems = (__bridge_transfer id)(snapshotRef);
-        
-        for (id item in loginItems) {
-            LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)item;
-            CFURLRef itemURLRef;
-            if (LSSharedFileListItemResolve(itemRef, 0, &itemURLRef, NULL) == noErr) {
-                NSURL *itemURL = (__bridge_transfer id)(itemURLRef);
-                if ([itemURL isEqual:bundleURL]) {
-                    LSSharedFileListItemRemove(loginItemsListRef, itemRef);
-                }
-            }
-        }
-    }
-}
-
 #pragma mark - Actions
 
 - (IBAction)uninstallApplicationClicked:(NSButton *)sender {
@@ -115,9 +83,10 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.swift-blog.de/"]];
 }
 
-- (IBAction)launchOnStartClicked:(NSButton *)sender {
-    [_defaults setBool:sender.state forKey:@"launchOnStart"];
-    [self setLaunchOnLogin:sender.state];
+- (IBAction)startApplicationClicked:(NSButton *)sender {
+    
+    if(![[NSWorkspace sharedWorkspace] launchApplication:@"/Applications/MarioMeetsMenuBar.app"])
+        NSLog(@"Path Finder failed to launch");
 }
 
 @end
